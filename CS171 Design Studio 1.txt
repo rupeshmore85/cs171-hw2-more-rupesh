@@ -1,0 +1,68 @@
+CS 171 Design Studio 1 - Github Commit Graph
+
+1. Think about how these networks are different. Analyze the “dimensions” of these networks. What are the relevant attributes (e.g., commits, users, branches, commit size, etc.) of these representations? 
+
+-- Commits, Users, Branches are the attributes used while implementing the graph.
+
+What other attributes could be relevant in this graph?
+-- Other Attributes: Commit timestamp, Author information etc.
+
+Write a list of all the attributes your visualization could show. 
+--  Commits, Users, Author, Commit Timestamp, Branches etc.
+
+2. Are there different roles, i.e. different types of users who might want to achieve different things? Write a list of user roles. 
+
+-- NA
+
+3. Think about which tasks a user of your visualization might want to achieve. Write down a list of tasks. 
+
+-- Commit information, Commit author information, Commit timestamp, Relationship with the parent-child, branch information, significant performance load.
+Ability to handle large amount of commit points, Ability to store all the commits and to add interactivity.
+
+4. Identify one role that you want to design your visualization for. Prioritize your task and attribute lists based on this role’s needs.
+
+-- For all the users visiting the network graphs, for project users, for contributors, for project managers etc.
+
+----------------------------------------------------------------------------------------------------------------------
+
+PART 2 - SKETCHING
+Here are some questions to consider:
+
+1. Decide on which visual variable to use for which attributes of the visualizations. 
+Remember the strengths and weaknesses of visual variables we discussed in class. 
+Use the strongest visual variable for the most important attributes of the data.
+
+-- Visual variables such as:
+i. Each user will be represented with a separate color. 
+ii. The position(ordinal) of each commit point is important considering the xy co-ordinate.
+iii. The shape of each commit point.
+iv. The value of the tooltip when hovered over each commit point and the information to be shown in it.
+v. Orientation of the graph. 
+vi. For interaction, the value of each color i.e. when mouse is hovered that area should be dark and when mouse is out, the area should be lightened.
+vii. The color hue/texture of each commit point.
+viii. The connectivity between commit points.
+
+
+2. Do you think it is necessary to represent every single commit as a separate node? Could you think of ways to aggregate this?
+
+-- Yes it is necessary to represent each commit node as a separate point when the commit timings are distinguishable. 
+If many commit points made by different users at the same time when it cannot be distinguished in the same linear graph, it can be combined or aggregated to show as a single point with a big radius when
+hovered over can represent all the commit information.
+
+
+3. Do you think that every contributor needs a “row”, as on the default network view on github? 
+Could you think of a smarter way to summarize those? 
+
+-- Not necessarily each user requires a separate row as there can be many users as contributors to the repository.
+The latest commit point should be considered and then it should be linked to its branches. Contributor information can be shown at the commit point.
+
+
+4. Is a node-link diagram the appropriate representation? Or should you consider alternative graph representations?
+
+-- Node link diagram best work for small repositories where the number of contributors are less as well as the commit points.
+Alternative graph representation can be to make the graph interactive such as implementing using a chord graph.
+All the commit points can be shown in the circle. The radius of the chord layout can be adjusted based on the # of commit points.
+Each commit points represents the parent child relationship. When hovered over a commit point, it highlights the relationship (parent-child) while fading out the other relationship.
+
+
+
